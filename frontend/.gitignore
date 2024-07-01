@@ -5,6 +5,9 @@
 .DS_Store
 .prettierignore
 
+# env
+.env
+
 # Logs
 logs
 *.log
