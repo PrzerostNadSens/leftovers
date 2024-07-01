@@ -1,3 +1,3 @@
 export default function MainPageContent() {
-  return <main className="main-section"></main>;
+  return <div>Hello world!</div>;
 }
