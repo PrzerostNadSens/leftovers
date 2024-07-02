@@ -1,22 +1,12 @@
-import MaterialThemeProvider, { theme } from "./pages/material-theme";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
-import MainPageContent from "./pages/main-page/MainPage";
+import MainRouter from "./providers/main-router";
+import MaterialThemeProvider from "./providers/material-theme";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ThemeProvider } from "@mui/material";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainPageContent />,
-  },
-]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <MaterialThemeProvider>
-      <RouterProvider router={router} />
+      <MainRouter />
     </MaterialThemeProvider>
   </React.StrictMode>
 );
