@@ -1,3 +1,9 @@
+import { Typography } from "@mui/material";
+
 export default function MainPageContent() {
-  return <main className="main-section"></main>;
+  return (
+    <Typography variant="h4" color="textSecondary">
+      Hello World
+    </Typography>
+  );
 }

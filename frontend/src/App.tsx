@@ -1,7 +1,11 @@
-import MainPageContent from "./pages/main-page/MainPage";
+import { Outlet } from "react-router-dom";
 
 function App() {
-  return <MainPageContent />;
+  return (
+    <>
+      <Outlet />
+    </>
+  );
 }
 
 export default App;
