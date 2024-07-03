@@ -1,19 +1,10 @@
 import { Typography } from "@mui/material";
-import { http } from "../../providers/http-service";
-import { useQuery } from "@tanstack/react-query";
+import { mainPageService } from "./main-page-service";
 
 export default function MainPageContent() {
-  const { isPending, error, data } = useQuery({
-    queryKey: ["repoData"],
-    queryFn: () =>
-      http
-        .get(`${import.meta.env.VITE_API_URL}/TanStack/query`)
-        .then((response) => response.data),
-  });
+  const { isPending, data } = mainPageService.getAllData();
 
   if (isPending) return "Loading...";
-
-  if (error) return "An error has occurred: " + error.message;
 
   return (
     <div>
