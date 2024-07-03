@@ -10,7 +10,7 @@ export interface DataDetails {
 }
 
 class MainPageService {
-  public getAllData(): {
+  public useMainPageData(): {
     isPending: boolean;
     data: DataDetails;
   } {

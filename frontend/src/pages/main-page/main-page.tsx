@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 import { mainPageService } from "./main-page-service";
 
 export default function MainPageContent() {
-  const { isPending, data } = mainPageService.getAllData();
+  const { isPending, data } = mainPageService.useMainPageData();
 
   if (isPending) return "Loading...";
 
