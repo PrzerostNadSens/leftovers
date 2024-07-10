@@ -1,12 +1,15 @@
 import MainRouter from "./providers/main-router";
 import MaterialThemeProvider from "./providers/material-theme";
+import QueryProvider from "./providers/query-provider";
 import React from "react";
 import ReactDOM from "react-dom/client";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <MaterialThemeProvider>
-      <MainRouter />
+      <QueryProvider>
+        <MainRouter />
+      </QueryProvider>
     </MaterialThemeProvider>
   </React.StrictMode>
 );
