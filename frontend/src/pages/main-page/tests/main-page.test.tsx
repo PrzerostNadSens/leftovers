@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { vi } from 'vitest';
 
 import MainPageContent from '../main-page';
-import { mainPageService } from '../main-page-service';
+import { useRepoData } from '../query/useRepoData';
 
 const mockData = {
   name: 'Test Repo',
@@ -13,23 +13,13 @@ const mockData = {
   forks_count: 300,
 };
 
-vi.mock('../main-page-service', () => ({
-  mainPageService: {
-    useMainPageData: () => ({
-      isPending: false,
-      data: mockData,
-    }),
-  },
-}));
+vi.mock('../query/useRepoData');
 
 const queryClient = new QueryClient();
 
 describe('MainPageContent', () => {
   it('renders loading state', () => {
-    vi.spyOn(mainPageService, 'useMainPageData').mockReturnValueOnce({
-      isPending: true,
-      data: mockData,
-    });
+    (useRepoData as jest.Mock).mockReturnValue({ isPending: true, data: null });
 
     render(
       <QueryClientProvider client={queryClient}>
@@ -41,6 +31,11 @@ describe('MainPageContent', () => {
   });
 
   it('renders the MainPageContent', () => {
+    (useRepoData as jest.Mock).mockReturnValue({
+      isPending: false,
+      data: mockData,
+    });
+
     render(
       <QueryClientProvider client={queryClient}>
         <MainPageContent />

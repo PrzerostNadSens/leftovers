@@ -1,9 +1,9 @@
 import { Typography } from '@mui/material';
 
-import { mainPageService } from './main-page-service';
+import { useRepoData } from './query/useRepoData';
 
 export default function MainPageContent() {
-  const { isPending, data } = mainPageService.useMainPageData();
+  const { isPending, data } = useRepoData();
 
   if (isPending) return 'Loading...';
 
