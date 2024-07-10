@@ -1,5 +1,6 @@
-import { http } from "../../providers/http-service";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery } from '@tanstack/react-query';
+
+import { http } from '../../providers/http-service';
 
 export interface DataDetails {
   name: string;
@@ -15,7 +16,7 @@ class MainPageService {
     data: DataDetails;
   } {
     const { isPending, data } = useQuery({
-      queryKey: ["repoData"],
+      queryKey: ['repoData'],
       queryFn: () => http.get(`${import.meta.env.VITE_API_URL}/TanStack/query`),
     });
 
