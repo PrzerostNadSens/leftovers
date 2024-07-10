@@ -1,14 +1,11 @@
-import axios, { AxiosInstance } from "axios";
+import axios, { AxiosInstance } from 'axios';
 
 export const http: AxiosInstance = axios.create();
 
 class HttpService {
   constructor(private readonly http: AxiosInstance) {}
 
-  public async get<T, U>(
-    url: string,
-    params?: { [param: string]: U }
-  ): Promise<T> {
+  public async get<T, U>(url: string, params?: { [param: string]: U }): Promise<T> {
     const response = await this.http.get(url, { params });
 
     return response.data;
