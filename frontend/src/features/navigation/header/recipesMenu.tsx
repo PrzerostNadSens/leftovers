@@ -22,37 +22,17 @@ const menuItems = [
   { label: '🥗 Salads', path: '/recipes/salads' },
 ];
 
-const StyledButton = styled(Button)(({ theme, clicked }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  padding: theme.spacing(1),
-  textTransform: 'none',
-  backgroundColor: clicked ? theme.palette.action.hover : 'transparent',
-  color: theme.palette.text.secondary,
-  '&:hover': {
-    backgroundColor: theme.palette.action.hover,
-  },
-}));
-
-const Container = styled('div')(() => ({
-  display: 'flex',
-  alignItems: 'center',
-}));
-
 const RecipesMenu = () => {
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [clicked, setClicked] = React.useState(false);
 
   const handleOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
     setOpen(true);
-    setClicked(true);
   };
 
   const handleClose = () => {
     setOpen(false);
-    setClicked(false);
   };
 
   return (
@@ -62,7 +42,6 @@ const RecipesMenu = () => {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleOpen}
-        clicked={clicked}
       >
         Recipes {open ? <KeyboardArrowUpOutlined /> : <KeyboardArrowDownOutlined />}
       </StyledButton>
@@ -91,5 +70,22 @@ const RecipesMenu = () => {
     </Container>
   );
 };
+
+const StyledButton = styled(Button)(({ theme, open }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  padding: theme.spacing(1),
+  textTransform: 'none',
+  backgroundColor: open ? theme.palette.action.hover : 'transparent',
+  color: theme.palette.text.secondary,
+  '&:hover': {
+    backgroundColor: theme.palette.action.hover,
+  },
+}));
+
+const Container = styled('div')(() => ({
+  display: 'flex',
+  alignItems: 'center',
+}));
 
 export default RecipesMenu;

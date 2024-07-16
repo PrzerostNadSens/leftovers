@@ -3,6 +3,15 @@ import { alpha, styled } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 
+const Search = () => (
+  <SearchContainer>
+    <StyledInputBase placeholder="Search" inputProps={{ 'aria-label': 'search' }} />
+    <SearchIconWrapper>
+      <SearchIcon />
+    </SearchIconWrapper>
+  </SearchContainer>
+);
+
 const SearchContainer = styled('div')(({ theme }) => ({
   boxSizing: 'border-box',
   position: 'relative',
@@ -41,14 +50,5 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     width: '100%',
   },
 }));
-
-const Search = () => (
-  <SearchContainer>
-    <StyledInputBase placeholder="Search" inputProps={{ 'aria-label': 'search' }} />
-    <SearchIconWrapper>
-      <SearchIcon />
-    </SearchIconWrapper>
-  </SearchContainer>
-);
 
 export default Search;

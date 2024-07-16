@@ -6,12 +6,6 @@ import Search from './search';
 import Toolbar from '@mui/material/Toolbar';
 import { styled } from '@mui/material/styles';
 
-const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-  gap: '16px',
-  backgroundColor: theme.palette.background.paperElevation0,
-  padding: '0px var(--9) 0px var(--9)',
-}));
-
 const Header = () => {
   return (
     <AppBar position="static" color="transparent" elevation={0}>
@@ -25,5 +19,11 @@ const Header = () => {
     </AppBar>
   );
 };
+
+const StyledToolbar = styled(Toolbar)(({ theme }) => ({
+  gap: '16px',
+  backgroundColor: theme.palette.background.paperElevation0,
+  padding: '0px var(--9) 0px var(--9)',
+}));
 
 export default Header;
