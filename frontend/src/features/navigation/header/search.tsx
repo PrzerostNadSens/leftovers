@@ -12,6 +12,8 @@ const Search = () => (
   </SearchContainer>
 );
 
+export default Search;
+
 const SearchContainer = styled('div')(({ theme }) => ({
   boxSizing: 'border-box',
   position: 'relative',
@@ -50,5 +52,3 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     width: '100%',
   },
 }));
-
-export default Search;

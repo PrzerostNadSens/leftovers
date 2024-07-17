@@ -71,6 +71,8 @@ const RecipesMenu = () => {
   );
 };
 
+export default RecipesMenu;
+
 const StyledButton = styled(Button)(({ theme, open }) => ({
   display: 'flex',
   alignItems: 'center',
@@ -87,5 +89,3 @@ const Container = styled('div')(() => ({
   display: 'flex',
   alignItems: 'center',
 }));
-
-export default RecipesMenu;
