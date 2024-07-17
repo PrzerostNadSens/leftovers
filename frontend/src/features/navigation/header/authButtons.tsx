@@ -8,6 +8,8 @@ const AuthButtons = () => (
   </>
 );
 
+export default AuthButtons;
+
 const StyledLoginButton = styled(Button)(({ theme }) => ({
   color: theme.palette.primary.main,
   textTransform: 'none',
@@ -21,5 +23,3 @@ const StyledSignUpButton = styled(Button)(({ theme }) => ({
   padding: '6px 16px',
   variant: 'contained',
 }));
-
-export default AuthButtons;
