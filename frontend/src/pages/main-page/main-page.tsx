@@ -13,7 +13,11 @@ export default function MainPageContent() {
   if (isPending) return 'Loading...';
 
   return (
-    <StyledBox>
+    <StyledBox
+      sx={{
+        paddingX: { xs: '1.5rem', lg: '4.5rem' },
+      }}
+    >
       <Typography variant="h4" color="textSecondary">
         {data.name}
       </Typography>
