@@ -1,12 +1,17 @@
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
+import { useAuth } from '../../../providers/auth-provider';
 
-const AuthButtons = () => (
-  <>
-    <StyledLoginButton>Log in</StyledLoginButton>
-    <StyledSignUpButton>Sign up</StyledSignUpButton>
-  </>
-);
+const AuthButtons = () => {
+  const { login } = useAuth();
+
+  return (
+    <>
+      <StyledLoginButton onClick={login}>Log in</StyledLoginButton>
+      <StyledSignUpButton>Sign up</StyledSignUpButton>
+    </>
+  );
+};
 
 export default AuthButtons;
 
